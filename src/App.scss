@@ -1,0 +1,63 @@
+.container {
+  background-color: var(--bg-blue-1);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  gap: 60px;
+
+  .message-button {
+    background-color: var(--bg-white-1);
+    color: var(--bg-blue-1);
+    padding: 12px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 2rem;
+    border-radius: 12px;
+  }
+
+  .circle {
+    color: var(--bg-white-1);
+    border-color: var(--bg-white-1);
+    border: 5px solid;
+    border-radius: 50%;
+    font-size: 3rem;
+    padding: 59px;
+    font-weight: 700;
+  }
+
+  .key-infos {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    .key-info {
+      width: 19%;
+      border-radius: 10px;
+      font-size: 1rem;
+      text-align: center;
+      border-radius: 5px;
+      overflow: hidden;
+
+      .label {
+        width: 100%;
+        background-color: var(--bg-blue-2);
+        color: var(--bg-white-1);
+        padding: 8px 0;
+      }
+
+      .value {
+        width: 100%;
+        background-color: var(--bg-white-1);
+        padding: 8px 0;
+      }
+    }
+  }
+}
