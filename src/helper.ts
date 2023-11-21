@@ -9,22 +9,29 @@ interface PrepareHookReturn {
 const usePrepareHook = (): PrepareHookReturn => {
   const [isPressed, setIsPressed] = useState(false);
   const [keyInfos, setKeyInfos] = useState<IKeyInfo[]>([]);
-
   useEffect(() => {
-    handlePressKey();
+    document.addEventListener(
+      "keydown",
+      (e: KeyboardEvent) => handlePressKey(e),
+      true
+    );
+
+    return document.removeEventListener(
+      "keydown",
+      (e: KeyboardEvent) => handlePressKey(e),
+      true
+    );
   }, []);
 
-  const handlePressKey = () => {
-    document.addEventListener("keydown", (event: KeyboardEvent) => {
-      const data: IKeyInfo[] = [];
-      data.push({ label: "Key", value: event.key });
-      data.push({ label: "Location", value: event.location.toString() });
-      data.push({ label: "Which", value: event.which.toString() });
-      data.push({ label: "Code", value: event.keyCode.toString() });
+  const handlePressKey = (event: KeyboardEvent) => {
+    const data: IKeyInfo[] = [];
+    data.push({ label: "Key", value: event.key });
+    data.push({ label: "Location", value: event.location.toString() });
+    data.push({ label: "Which", value: event.which.toString() });
+    data.push({ label: "Code", value: event.code.toString() });
 
-      setKeyInfos(keyInfos);
-      setIsPressed(true);
-    });
+    setKeyInfos(data);
+    setIsPressed(true);
   };
 
   return {

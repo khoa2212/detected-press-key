@@ -29,17 +29,22 @@
     border: 5px solid;
     border-radius: 50%;
     font-size: 3rem;
-    padding: 59px;
+    max-width: var(--circle-radius);
+    width: 100%;
+    height: var(--circle-radius);
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .key-infos {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
 
     .key-info {
-      width: 19%;
+      width: 22%;
       border-radius: 10px;
       font-size: 1rem;
       text-align: center;
@@ -57,6 +62,10 @@
         width: 100%;
         background-color: var(--bg-white-1);
         padding: 8px 0;
+
+        &::first-letter {
+          text-transform: uppercase;
+        }
       }
     }
   }

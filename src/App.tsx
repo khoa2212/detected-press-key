@@ -8,7 +8,7 @@ function App() {
     <div className="container">
       {isPressed ? (
         <>
-          <div className="circle">13</div>
+          <div className="circle">{keyInfos[2].value}</div>
           <div className="key-infos">
             {keyInfos.map((item) => (
               <div className="key-info">
